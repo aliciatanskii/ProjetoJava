@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto.controller.FXMLCadastroPassageiroController">
+   <children>
+      <MenuBar layoutX="5.0" prefHeight="26.0" prefWidth="800.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cadastro">
+               <items>
+                  <MenuItem fx:id="menuItemEmpresa" mnemonicParsing="false" onAction="#handleMenuItemEmpresa" text="Empresa" />
+                  <MenuItem fx:id="menuItemMotorista" mnemonicParsing="false" onAction="#handleMenuItemMotorista" text="Motorista" />
+                  <MenuItem fx:id="menuItemFiscal" mnemonicParsing="false" onAction="#handleMenuItemFiscal" text="Fiscal" />
+                  <MenuItem fx:id="menuItemPassageiro" mnemonicParsing="false" onAction="#handleMenuItemPassageiro" text="Passageiro" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Consulta">
+               <items>
+                  <MenuItem fx:id="menuItemPassagem" mnemonicParsing="false" onAction="#handleMenuConsultaPassagem" text="Vizualização Passagem" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.4665551839464883" layoutY="26.0" prefHeight="374.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+        <items>
+          <AnchorPane prefHeight="398.0" prefWidth="314.0">
+               <children>
+                  <TableView fx:id="tableViewPassageiro" layoutX="-20.0" layoutY="-34.0" prefHeight="398.0" prefWidth="282.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn id="cpf" fx:id="tableColumnCpf" prefWidth="75.0" text="CPF" />
+                      <TableColumn id="nome" fx:id="tableColumnNome" prefWidth="186.40003967285156" text="Nome" />
+                        <TableColumn fx:id="tableColumnPossuiSeguro" prefWidth="108.0" text="Possui seguro?" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="301.0">
+               <children>
+                  <GridPane layoutX="20.0" layoutY="143.0" prefHeight="94.0" prefWidth="276.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="66.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="210.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Nome" GridPane.rowIndex="1" />
+                        <Label text="Seguro" GridPane.rowIndex="2" />
+                        <TextField fx:id="textFieldPassageiroNome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="CPF" />
+                        <TextField fx:id="textFieldPassageiroCpf" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="radioBtnPassageiroSeguro" mnemonicParsing="false" text="Possui" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Group layoutX="113.0" layoutY="310.0">
+                     <children>
+                        <Button fx:id="btnPassageiroRemover" layoutX="119.0" mnemonicParsing="false" onAction="#handleBtnDelete" text="Remover" />
+                        <Button fx:id="btnPassageiroAlterar" layoutX="62.0" mnemonicParsing="false" onAction="#handleBtnAlterar" text="Alterar" />
+                        <Button fx:id="btnPassageiroNovo" mnemonicParsing="false" onAction="#handleBtnNovo" prefHeight="25.0" prefWidth="55.0" text="Novo" />
+                     </children>
+                  </Group>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

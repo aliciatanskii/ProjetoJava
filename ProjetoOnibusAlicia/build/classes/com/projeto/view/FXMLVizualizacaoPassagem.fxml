@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto.controller.FXMLVizualizacaoPassagemController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="826.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cadastro">
+               <items>
+                  <MenuItem fx:id="menuItemEmpresa" mnemonicParsing="false" onAction="#handleMenuItemEmpresa" text="Empresa" />
+                  <MenuItem fx:id="menuItemMotorista" mnemonicParsing="false" onAction="#handleMenuItemMotorista" text="Motorista" />
+                  <MenuItem fx:id="menuItemFiscal" mnemonicParsing="false" onAction="#handleMenuItemFiscal" text="Fiscal" />
+                  <MenuItem fx:id="menuItemPassageiro" mnemonicParsing="false" onAction="#handleMenuItemPassageiro" text="Passageiro" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Consulta">
+               <items>
+                  <MenuItem fx:id="menuItemPassagem" mnemonicParsing="false" onAction="#handleMenuConsultaPassagem" text="Vizualização Passagem" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TableView fx:id="tableViewPassagem" layoutX="3.0" layoutY="27.0" prefHeight="514.0" prefWidth="826.0">
+        <columns>
+          <TableColumn fx:id="tableColumnCpf" prefWidth="75.0" text="CPF" />
+          <TableColumn fx:id="tableColumnFrota" prefWidth="87.99999237060547" text="Frota" />
+            <TableColumn fx:id="tableColumnCodBarras" prefWidth="108.79998779296875" text="CodBarras" />
+            <TableColumn fx:id="tableColumnPoltrona" prefWidth="82.39996337890625" text="Poltrona" />
+            <TableColumn fx:id="tableColumnPontoPartida" prefWidth="113.5999755859375" text="Ponto Partida" />
+            <TableColumn fx:id="tableColumnDestino" minWidth="1.60003662109375" prefWidth="69.60003662109375" text="Destino" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
